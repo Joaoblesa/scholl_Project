@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  .header-simples {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3347B0;
+    padding: 10px 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo img {
+    height: 60px;
+    width: auto;
+  }
+  
+  .logo h1 {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    margin: 0;
+    text-transform: none;
+  }
+  
+  .sair {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  .sair img {
+    height: 35px;
+    width: auto;
+  }
+  
+  .sair span {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
