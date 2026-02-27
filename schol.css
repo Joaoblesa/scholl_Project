@@ -1,52 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-  
-  .header-simples {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #3347B0;
-    padding: 10px 30px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .logo img {
-    height: 60px;
-    width: auto;
-  }
-  
-  .logo h1 {
-    color: white;
-    font-size: 1.2rem;
-    line-height: 1.1;
-    margin: 0;
-    text-transform: none;
-  }
-  
-  .sair {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-  }
-  
-  .sair img {
-    height: 35px;
-    width: auto;
-  }
-  
-  .sair span {
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
+  font-family: sans-serif;
+  background-color: #ffffff;
+}
+
+.header-simples {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3347B0;
+  padding: 10px 50px;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.logo h1 {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.sair {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.sair img {
+  height: 30px;
+}
+
+.mainzinho {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px;
+  min-height: calc(100vh - 80px);
+}
+
+.textinho h1 {
+  font-size: 3rem;
+  color: #333;
+  line-height: 1.2;
+}
+
+.curso-blue {
+  color: #3347B0;
+  font-weight: bold;
+}
+
+.computas img {
+  width: 400px;
+  margin-top: 30px;
+}
+
+.lado-direito {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card-curso {
+  background-color: #3347B0;
+  width: 320px;
+  height: 160px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0px #CCCCCC;
+  transition: 0.3s;
+}
+
+.card-curso:hover {
+  transform: scale(1.02);
+}
+
+.card-curso span {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.card-curso img {
+  height: 70px;
+}
+
+.footer-simples {
+  background-color: #3347B0;
+}
+
+.footer-simples {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3347B0;
+  padding: 20px 60px;
+  height: 120px;
+  color: white;
+}
+
+.contatos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-contato {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-contato img {
+  height: 18px;
+  width: auto;
+}
+
+.item-contato span {
+  font-size: 0.9rem;
+}
+
+.copyright span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.redes-sociais img {
+  height: 40px; 
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#root {
+  flex: 1; 
+}

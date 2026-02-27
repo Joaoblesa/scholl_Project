@@ -1,28 +1,57 @@
-const urlBase = 'https://lion-school-phbo.onrender.com';
+const urlCursos = 'https://lion-school-backend.onrender.com/cursos';
 
+const carregarConteudo = async () => {
+    const root = document.getElementById('root');
+    root.classList.add('mainzinho');
 
+    root.innerHTML = `
+        <section class="lado-esquerdo">
+            <div class="textinho">
+                <h1>Escolha um <span class="curso-blue">curso</span></h1>
+                <h1>para gerenciar</h1>
+            </div>
+            <div class="container-ilustracao">
+                <img src="./img/devices.svg" alt="Computador" class="img-computas">
+                <img src="./img/studant.svg" alt="Mulher" class="img-mulher">
+            </div>
+        </section>
+        <section id="lado-direito" class="lado-direito">
+            <p id="aviso">Carregando cursos...</p>
+        </section>
+    `;
 
-const getCursos = async () => {
-    const response = await fetch(`${urlBase}/cursos`);
-    const data = await response.json();
-    return data;
+    const ladoDireito = document.getElementById('lado-direito');
+
+    try {
+        const response = await fetch(urlCursos);
+        const cursos = await response.json();
+
+        ladoDireito.innerHTML = '';
+
+        cursos.forEach(curso => {
+            const card = document.createElement('div');
+            card.className = 'card-curso';
+
+            const icone = curso.sigla.toUpperCase() === 'DS' 
+            ? './img/DS.svg' 
+            : './img/Redes.svg';
+
+            card.innerHTML = `
+                <img src="${icone}" alt="${curso.sigla}">
+                <span>${curso.sigla}</span>
+            `;
+
+            card.onclick = () => {
+                localStorage.setItem('cursoSelecionado', curso.sigla);
+                window.location.href = './alunos.html';
+            };
+
+            ladoDireito.appendChild(card);
+        });
+
+    } catch (error) {
+        ladoDireito.innerHTML = `<p>Erro ao carregar dados do servidor</p>`;
+    }
 };
 
-const getAlunos = async () => {
-    const response = await fetch(`${urlBase}/alunos`);
-    const data = await response.json();
-    return data;
-};
-
-
-const getAlunosPorCurso = async (idCurso) => {
-    const response = await fetch(`${urlBase}/alunos?curso_id=${idCurso}`);
-    const data = await response.json();
-    return data;
-};
-
-const getAlunoPorID = async (idAluno) => {
-    const response = await fetch(`${urlBase}/alunos/${idAluno}`);
-    const data = await response.json();
-    return data;
-};
+document.addEventListener('DOMContentLoaded', carregarConteudo);
